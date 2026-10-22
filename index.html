@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <style>
+        :root {
+            --color-bg: #0a0e14;
+            --color-surface: #121821;
+            --color-primary: #00f2ff;
+            --color-text: #e0e6ed;
+            --color-text-muted: #8892b0;
+            --font-main: 'Inter', system-ui, sans-serif;
+        }
+
+        .lead-form {
+            background-color: var(--color-surface);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 242, 255, 0.1);
+            max-width: 450px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            font-family: var(--font-main);
+        }
+
+        .lead-form__group {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lead-form__label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .lead-form__input {
+            background-color: #05070a;
+            border: 1px solid #232d3b;
+            border-radius: 4px;
+            padding: 0.875rem;
+            color: #fff;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .lead-form__input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 2px rgba(0, 242, 255, 0.2);
+        }
+
+        .lead-form__input::placeholder {
+            color: #4a5568;
+        }
+
+        .lead-form__submit {
+            width: 100%;
+            background-color: var(--color-primary);
+            color: #000;
+            border: none;
+            padding: 1rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: transform 0.2s ease, filter 0.2s ease;
+            margin-top: 1rem;
+        }
+
+        .lead-form__submit:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+
+        .lead-form__submit:active {
+            transform: translateY(0);
+        }
+
+        .lead-form__privacy {
+            margin-top: 1.25rem;
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: var(--color-text-muted);
+            text-align: center;
+        }
+
+        .lead-form__privacy-link {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .lead-form__privacy-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <form class="lead-form" id="cyber-lead-capture">
+        <div class="lead-form__group">
+            <label for="name" class="lead-form__label">Nombre Completo</label>
+            <input type="text" id="name" name="name" class="lead-form__input" placeholder="Ej. Alex Thompson" required>
+        </div>
+
+        <div class="lead-form__group">
+            <label for="corporate-email" class="lead-form__label">Email Corporativo</label>
+            <input type="email" id="corporate-email" name="email" class="lead-form__input" placeholder="alex@empresa.com" required>
+        </div>
+
+        <div class="lead-form__group">
+            <label for="job-title" class="lead-form__label">Cargo / Posición</label>
+            <input type="text" id="job-title" name="job_title" class="lead-form__input" placeholder="Ej. CISO / Director TI" required>
+        </div>
+
+        <button type="submit" class="lead-form__submit">
+            Agendar Auditoría de Seguridad
+        </button>
+
+        <p class="lead-form__privacy">
+            Protegemos sus datos bajo estándares SOC2. Al enviar, acepta nuestra 
+            <a href="/privacidad" class="lead-form__privacy-link">Política de Tratamiento de Datos</a> 
+            y comunicaciones de ciberseguridad.
+        </p>
+    </form>
+
+</body>
+</html>
